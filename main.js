@@ -16,15 +16,14 @@ function generaRandom(min, max) {
 //function for generate mines, choosing numbers of mine , min random number  and max random number.Default numbers of mines 5
 function generateMines(maxNumberOfMines = 5,minRandomNumber,maxRandomNumber){
     var array = [];
-    var numberOfIteraction = 0;
+
     while(array.length < maxNumberOfMines) {
         var number = generaRandom(minRandomNumber, maxRandomNumber);
-
 
         if(!array.includes(number)) {
             array.push(number);
         }
-        numberOfIteraction++;
+
     }
     return array;
 
@@ -46,6 +45,7 @@ function hit(list,number){
 function mainGame(level) {
     //Create an array of 16 mines with random number in range 1- maxLevelDifficulty
     var mines = generateMines(16,1,level);
+    console.log(mines);
     //Variable that check if the user dosen't hit a mine(He's live!!)
     var alive = true
 
